@@ -86,22 +86,22 @@ $month = 5;
 switch ($month) {
     case 1:
     case 2:
-    case 3:
+    case 12:
         echo "Данный месяц \"$month\" является зимним";
         break;
+    case 3:
     case 4:
     case 5:
-    case 6:
     echo "Данный месяц \"$month\" является весенним";
         break;
+    case 6:
     case 7:
     case 8:
-    case 9:
         echo "Данный месяц \"$month\" является летним";
         break;
+    case 9:
     case 10:
     case 11:
-    case 12:
         echo "Данный месяц \"$month\" является осенним";
         break;
     default:
