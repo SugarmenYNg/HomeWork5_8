@@ -23,8 +23,9 @@
 echo "<b>Задание 1:</b><br>";
 
 //Обьявляем переменную $num
-$num = 1;
+$num = 0;
 
+echo "<div style='font-size: 13px;'><b>Результат работы с использованием Switch:</b></div>";
 switch ($num) {
     case 1:
         $result = "Зима";
@@ -41,8 +42,24 @@ switch ($num) {
     default:
         $result = "выбранное Вами время года несуществует.";
 }
-echo "Время года которое вы выбрали это: <b>$result</b>";
+echo "<div style='font-size: 12px;'>Время года которое вы выбрали это: <b>$result</b></div>";
+unset($result);
+echo "<br><br>";
 
+echo "<div style='font-size: 13px;'><b>Результат работы с использованием if/else:</b></div>";
+if ($num == 1) {
+    $result = "Зима";
+} elseif ($num == 2) {
+    $result = "Весна";
+} elseif ($num == 3) {
+    $result = "Лето";
+} elseif ($num == 4) {
+    $result = "Осень";
+} else {
+    $result = "выбранное Вами время года несуществует.";
+}
+echo "<div style='font-size: 12px;'>Время года которое вы выбрали это: <b>$result</b></div>";
+unset($result);
 echo "<br><br>";
 
 //Второе задание
@@ -51,61 +68,93 @@ echo "<b>Задание 2:</b><br>";
 //Обьявляем переменную $day
 $day = 12;
 
+echo "<div style='font-size: 13px;'><b>Результат работы с использованием if/else:</b></div>";
 //Первый вариант
 /*if ($day >=1 && $day < 11) {
-    echo "Данное число \"$day\" попадает в первую декаду месяца";
+    echo "<div style='font-size: 12px;'>Данное число \"$day\" попадает в первую декаду месяца</div>";
 } elseif ($day >= 11 && $day < 21) {
-    echo "Данное число \"$day\" попадает в вторую декаду месяца";
+    echo "<div style='font-size: 12px;'>Данное число \"$day\" попадает в вторую декаду месяца</div>";
 } elseif ($day >= 21 && $day <= 30) {
-    echo "Данное число \"$day\" попадает в третью декаду месяца";
+    echo "<div style='font-size: 12px;'>Данное число \"$day\" попадает в третью декаду месяца</div>";
 } else {
-    echo "Данный день \"$day\" не входит не в одну из трех декад месяца";
+    echo "<div style='font-size: 12px;'>Данный день \"$day\" не входит не в одну из трех декад месяца</div>";
 }*/
 
 //Второй вариант
 if ($day >=1 && $day <= 30) {
     if ($day < 11) {
-        echo "Данное число \"$day\" попадает в первую декаду месяца";
+        echo "<div style='font-size: 12px;'>Данное число \"$day\" попадает в первую декаду месяца</div>";
     } elseif ($day < 21) {
-        echo "Данное число \"$day\" попадает в третью декаду месяца";
+        echo "<div style='font-size: 12px;'>Данное число \"$day\" попадает в вторую декаду месяца</div>";
     } else {
-        echo "Данное число \"$day\" попадает в третью декаду месяца";
+        echo "<div style='font-size: 12px;'>Данное число \"$day\" попадает в третью декаду месяца</div>";
     }
 } else {
-    echo "Данный день \"$day\" не входит не в одну из трех декад месяца";
+    echo "<div style='font-size: 12px;'>Данный день \"$day\" не входит не в одну из трех декад месяца</div>";
 }
+echo "<br><br>";
 
+echo "<div style='font-size: 13px;'><b>Результат работы с использованием Switch:</b></div>";
+switch ($day) {
+    case ($day >= 1 && $day <= 10):
+        echo "<div style='font-size: 12px;'>Данное число \"$day\" попадает в первую декаду месяца</div>";
+        break;
+    case ($day >= 11 && $day <= 20):
+        echo "<div style='font-size: 12px;'>Данное число \"$day\" попадает в вторую декаду месяца</div>";
+        break;
+    case ($day >= 21 && $day <= 30):
+        echo "<div style='font-size: 12px;'>Данное число \"$day\" попадает в третью декаду месяца</div>";
+        break;
+    default:
+        echo "<div style='font-size: 12px;'>Данный день \"$day\" не входит не в одну из трех декад месяца</div>";
+
+}
 echo "<br><br>";
 
 //Третье задание
 echo "<b>Задание 3:</b><br>";
 
 //Обьявляем переменную $day
-$month = 5;
+$month = 8;
 
+echo "<div style='font-size: 13px;'><b>Результат работы с использованием if/else:</b></div>";
+if (($month >= 1 && $month <= 2) || $month == 12) {
+    echo "<div style='font-size: 12px;'>Данный месяц \"$month\" является зимним</div>";
+} elseif ($month >=3 && $month <= 5) {
+    echo "<div style='font-size: 12px;'>Данный месяц \"$month\" является весенним</div>";
+} elseif ($month >= 6 && $month <= 8) {
+    echo "<div style='font-size: 12px;'>Данный месяц \"$month\" является летним</div>";
+} elseif ($month >= 9 && $month <= 11) {
+    echo "<div style='font-size: 12px;'>Данный месяц \"$month\" является осенним</div>";
+} else {
+    echo "<div style='font-size: 12px;'>Задан не корректный номер \"$month\" месяца.</div>";
+}
+echo "<br><br>";
+
+echo "<div style='font-size: 13px;'><b>Результат работы с использованием Switch:</b></div>";
 switch ($month) {
     case 1:
     case 2:
     case 12:
-        echo "Данный месяц \"$month\" является зимним";
+        echo "<div style='font-size: 12px;'>Данный месяц \"$month\" является зимним</div>";
         break;
     case 3:
     case 4:
     case 5:
-    echo "Данный месяц \"$month\" является весенним";
+        echo "<div style='font-size: 12px;'>Данный месяц \"$month\" является весенним</div>";
         break;
     case 6:
     case 7:
     case 8:
-        echo "Данный месяц \"$month\" является летним";
+        echo "<div style='font-size: 12px;'>Данный месяц \"$month\" является летним</div>";
         break;
     case 9:
     case 10:
     case 11:
-        echo "Данный месяц \"$month\" является осенним";
+        echo "<div style='font-size: 12px;'>Данный месяц \"$month\" является осенним</div>";
         break;
     default:
-        echo "Задан не корректный номер \"$month\" месяца.";
+        echo "<div style='font-size: 12px;'>Задан не корректный номер \"$month\" месяца.</div>";
 }
 ?>
 </body>
